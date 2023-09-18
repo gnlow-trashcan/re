@@ -1,14 +1,14 @@
-vv 
-
 Object.defineProperty(globalThis, "a", {
     enumerable: true,
     configurable: true,
     get() {
-        return 1
+        return this[`_${"a"}`]()
     },
     set(f) {
-        this
+        this[`_${"a"}`] = f
     }
 })
 
+const b = 2
+a = () => b * 2
 console.log(a)
